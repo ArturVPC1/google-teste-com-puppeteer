@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 async function run() {
   // Inicializa o navegador
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({headless: false});
 
   // Abre uma nova página
   const page = await browser.newPage();
