@@ -15,11 +15,14 @@ async function run() {
 
   // Envia o formulário de pesquisa
   await page.evaluate(() => {
-    document.querySelector('form[name=f]').submit();
+    document.querySelector('form').submit();
   });
 
   // Espera até que a página carregue os resultados da pesquisa
   await page.waitForSelector('#search');
+
+  //tirar print
+  await page.screenshot({path: 'FUNCIONOU.png'});
 
   // Fecha o navegador
   await browser.close();
